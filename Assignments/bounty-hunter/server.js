@@ -53,7 +53,7 @@ app.put("/bounties/:bountyId", (req, res) => {
     const bountyId = req.params.bountyId
     let editBounty = bounties.find(each => each._id === bountyId)
     let newBounty = Object.assign(editBounty, req.body)
-    res.send(newBounty)
+    res.send(bounties)
 })
 
 //Delete One

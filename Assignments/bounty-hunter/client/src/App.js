@@ -28,7 +28,22 @@ function App() {
             .catch(error => console.log(error))
     }
 
-    let list = bountyList.map(each => <BountyList bounty={each} key={each._id} />)
+    function editBounty(editForm, bountyId) {
+        console.log(editForm)
+        console.log(bountyId)
+        axios.put(`/bounties/${bountyId}`, editForm)
+            .then(response => setBountyList(response.data))
+            .catch(error => console.log(error))
+    }
+
+    function deleteBounty(bountyId) {
+        console.log(bountyId)
+        axios.delete(`/bounties/${bountyId}`)
+            .then(response => setBountyList(response.data))
+            .catch(error => console.log(error))
+    }
+
+    let list = bountyList.map(each => <BountyList bounty={each} key={each._id} editBounty={editBounty} deleteBounty={deleteBounty} />)
 
     return (
         <div>
