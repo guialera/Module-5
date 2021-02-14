@@ -44,7 +44,7 @@ app.get("/bounties/:bountyId", (req, res) => {
 app.post("/bounties", (req, res) => {
     req.body._id = uuid()
     bounties.push(req.body)
-    res.send(`Submitted ${req.body.firstName} in bounties!`)
+    res.send(req.body)
 })
 
 //Put One
