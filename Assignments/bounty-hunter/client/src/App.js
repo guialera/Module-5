@@ -20,7 +20,7 @@ function App() {
     }
 
     function postBounty(bounty) {
-        console.log(bounty)
+        /*console.log(bounty)*/
         axios.post("/bounties", bounty)
             .then(response => {
                 setBountyList(prevBountyList => [...prevBountyList, response.data])
@@ -29,15 +29,15 @@ function App() {
     }
 
     function editBounty(editForm, bountyId) {
-        console.log(editForm)
-        console.log(bountyId)
+        /*console.log(editForm)
+        console.log(bountyId)*/
         axios.put(`/bounties/${bountyId}`, editForm)
             .then(response => setBountyList(response.data))
             .catch(error => console.log(error))
     }
 
     function deleteBounty(bountyId) {
-        console.log(bountyId)
+        /*console.log(bountyId)*/
         axios.delete(`/bounties/${bountyId}`)
             .then(response => setBountyList(response.data))
             .catch(error => console.log(error))

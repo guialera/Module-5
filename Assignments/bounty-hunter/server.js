@@ -8,7 +8,7 @@ const bounties = [
     {
         firstName: "Luke",
         lastName: "Skywalker",
-        living: true,
+        living: "true",
         bountyAmount: 5000,
         type: "Jedi",
         _id: uuid()
@@ -17,7 +17,7 @@ const bounties = [
     {
         firstName: "Darth",
         lastName: "Maul",
-        living: true,
+        living: "true",
         bountyAmount: 2000,
         type: "Sith",
         _id: uuid()

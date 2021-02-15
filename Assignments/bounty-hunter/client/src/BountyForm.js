@@ -1,11 +1,11 @@
-import React, { useEffect, useState } from "react"
+import React, { useState } from "react"
 
 function BountyForm(props) {
 
     let emptyForm = {
         firstName: "",
         lastName: "",
-        living: true,
+        living: "",
         bountyAmount: 0,
         type: ""
     }
@@ -15,7 +15,7 @@ function BountyForm(props) {
     function fillIn(event) {
         const { name, value } = event.target
         setInput(prevInput => ({ ...prevInput, [name]: value }))
-        console.log(input)
+        /*console.log(input)*/
     }
 
     function submitForm(e) {
@@ -42,10 +42,10 @@ function BountyForm(props) {
                     onChange={fillIn}
                 />
                 <input
-                    type="boolean"
-                    name="isAlive"
+                    type="text"
+                    name="living"
                     placeholder="Still Alive?"
-                    value={input.isAlive}
+                    value={input.living}
                     onChange={fillIn}
                 />
                 <input

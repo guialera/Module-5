@@ -1,0 +1,42 @@
+body{
+    background-color: aquamarine;
+}
+
+form{
+    text-align: center;
+}
+
+h1{
+    font-size: 29px;
+}
+
+p{
+    font-size: 20px;
+}
+
+input{
+    text-align: center;
+    margin-left: 5px;
+    margin-right: 5px;
+}
+
+.bountyList{
+    text-align: center;
+    border-style: solid;
+    background-color: azure;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    padding-bottom: 10px;
+}
+
+.editForm{
+    margin-top: 5px;
+}
+
+.deleteButton{
+    margin-left: 3px;
+}
+
+.editButton{
+    margin-right: 3px;
+}

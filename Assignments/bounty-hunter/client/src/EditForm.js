@@ -14,18 +14,18 @@ function EditForm(props) {
     function fillIn(event) {
         const { name, value } = event.target
         setInput(prevInput => ({ ...prevInput, [name]: value }))
-        console.log(input)
+        /*console.log(input)*/
     }
 
     function submitForm(e) {
         e.preventDefault()
         props.editBounty(input, props.formData._id)
-        setInput("")
+        /*setInput("")*/
         props.toggle()
     }
 
     return (
-        <div>
+        <div className="editForm">
             <form onSubmit={submitForm}>
                 <input
                     type="text"
@@ -42,10 +42,10 @@ function EditForm(props) {
                     onChange={fillIn}
                 />
                 <input
-                    type="boolean"
-                    name="isAlive"
+                    type="text"
+                    name="living"
                     placeholder="Still Alive?"
-                    value={input.isAlive}
+                    value={input.living}
                     onChange={fillIn}
                 />
                 <input
