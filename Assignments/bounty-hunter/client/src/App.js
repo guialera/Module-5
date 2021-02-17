@@ -32,14 +32,18 @@ function App() {
         /*console.log(editForm)
         console.log(bountyId)*/
         axios.put(`/bounties/${bountyId}`, editForm)
-            .then(response => setBountyList(response.data))
+            .then(response => {
+                setBountyList(prevBountyList => prevBountyList.map(each => each._id !== bountyId ? each : response.data))
+            })
             .catch(error => console.log(error))
     }
 
     function deleteBounty(bountyId) {
         /*console.log(bountyId)*/
         axios.delete(`/bounties/${bountyId}`)
-            .then(response => setBountyList(response.data))
+            .then(response => {
+                setBountyList(prevBountyList => prevBountyList.filter(each => each._id !== bountyId))
+            })
             .catch(error => console.log(error))
     }
 
