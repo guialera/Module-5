@@ -14,6 +14,19 @@ inventoryRouter.get("/", (req, res, next) => {
     })
 })
 
+//Get One
+
+inventoryRouter.get("/:inventoryId", (req, res, next) => {
+    InventoryModel.findById({ _id: req.params.inventoryId }, (error, foundItem) => {
+        if (error) {
+            res.status(500)
+            console.log(error)
+            return next(error)
+        }
+        return res.status(200).send(foundItem)
+    })
+})
+
 //Post One
 
 inventoryRouter.post("/", (req, res, next) => {
