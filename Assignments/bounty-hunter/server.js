@@ -76,6 +76,7 @@ app.listen(9000, () => {
 const express = require("express")
 const app = express()
 const mongoose = require("mongoose")
+const morgan = require("morgan")
 const BountyModel = require("./models/bountyModels.js")
 
 mongoose.connect("mongodb://localhost:27017/bountyHunterdb",
@@ -89,6 +90,8 @@ mongoose.connect("mongodb://localhost:27017/bountyHunterdb",
     .catch(error => console.log(error))
 
 app.use(express.json())
+
+app.use(morgan("dev"))
 
 //Get All
 
