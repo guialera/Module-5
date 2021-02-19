@@ -1,6 +1,7 @@
 const express = require("express")
 const app = express()
 const mongoose = require("mongoose")
+const morgan = require("morgan")
 
 mongoose.connect("mongodb://localhost:27017/crudStoredb",
     {
@@ -13,6 +14,8 @@ mongoose.connect("mongodb://localhost:27017/crudStoredb",
     .catch(error => console.log(error))
 
 app.use(express.json())
+
+app.use(morgan("dev"))
 
 app.use("/inventory", require("./routes/inventoryRoutes.js"))
 
